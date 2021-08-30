@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>00 starter</title>
+    <title>Filtrering af retterne</title>
     <style>
       body {
         font-family: sans-serif;
@@ -50,7 +50,7 @@
       };
       document.addEventListener("DOMContentLoaded", start);
       let menu;
-      let filter = "";
+      let filter = "kategori";
 
       // første funktion der kaldes efter DOM er loaded
       function start() {
@@ -76,12 +76,15 @@
 
         menu.forEach((menu) => {
           // loop igennem json (personer)
-          const klon = skabelon.cloneNode(true);
-          klon.querySelector(".navn").textContent = menu.navn;
-          klon.querySelector(".beskrivelse").textContent = menu.kortbeskrivelse;
-          klon.querySelector(".menu-billede").src =
-            "images/" + menu.billednavn + "-md.jpg";
-          dest.appendChild(klon);
+          if (filter == menu.desserter) {
+            const klon = skabelon.cloneNode(true);
+            klon.querySelector(".navn").textContent = menu.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              menu.kortbeskrivelse;
+            klon.querySelector(".menu-billede").src =
+              "images/" + menu.billednavn + "-md.jpg";
+            dest.appendChild(klon);
+          }
         });
       }
     </script>
