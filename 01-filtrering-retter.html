@@ -50,7 +50,11 @@
       };
       document.addEventListener("DOMContentLoaded", start);
       let menu;
-      let filter = "kategori";
+      let dessert = "desserter";
+      let hovedret = "hovedretter";
+      let forret = "forretter";
+      let drikke = "drikkevarer";
+      let sideo = "sideorders";
 
       // første funktion der kaldes efter DOM er loaded
       function start() {
@@ -76,7 +80,39 @@
 
         menu.forEach((menu) => {
           // loop igennem json (personer)
-          if (filter == menu.desserter) {
+          if (dessert == menu.kategori) {
+            const klon = skabelon.cloneNode(true);
+            klon.querySelector(".navn").textContent = menu.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              menu.kortbeskrivelse;
+            klon.querySelector(".menu-billede").src =
+              "images/" + menu.billednavn + "-md.jpg";
+            dest.appendChild(klon);
+          } else if (hovedret == menu.kategori) {
+            const klon = skabelon.cloneNode(true);
+            klon.querySelector(".navn").textContent = menu.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              menu.kortbeskrivelse;
+            klon.querySelector(".menu-billede").src =
+              "images/" + menu.billednavn + "-md.jpg";
+            dest.appendChild(klon);
+          } else if (forret == menu.kategori) {
+            const klon = skabelon.cloneNode(true);
+            klon.querySelector(".navn").textContent = menu.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              menu.kortbeskrivelse;
+            klon.querySelector(".menu-billede").src =
+              "images/" + menu.billednavn + "-md.jpg";
+            dest.appendChild(klon);
+          } else if (drikke == menu.kategori) {
+            const klon = skabelon.cloneNode(true);
+            klon.querySelector(".navn").textContent = menu.navn;
+            klon.querySelector(".beskrivelse").textContent =
+              menu.kortbeskrivelse;
+            klon.querySelector(".menu-billede").src =
+              "images/" + menu.billednavn + "-md.jpg";
+            dest.appendChild(klon);
+          } else if (sideo == menu.kategori) {
             const klon = skabelon.cloneNode(true);
             klon.querySelector(".navn").textContent = menu.navn;
             klon.querySelector(".beskrivelse").textContent =
