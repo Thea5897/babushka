@@ -126,6 +126,8 @@
               retter.kortbeskrivelse;
             klon.querySelector(".menu-billede").src =
               "images/" + retter.billednavn + "-md.jpg";
+
+            //Kalder anonym funktion indeni click, der fører siden over til single view
             klon.querySelector("article").addEventListener("click", () => {
               location.href = "detail-view-single.html?id=" + retter._id;
             });
