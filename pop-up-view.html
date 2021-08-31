@@ -10,13 +10,13 @@
       }
 
       img {
-        width: 100%;
+        max-width: 100%;
         border-radius: 1em;
       }
 
       #liste {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         grid-gap: 1em;
         margin: 2em;
       }
@@ -33,6 +33,7 @@
         gap: 1rem;
         padding: 1rem;
         background-color: chocolate;
+        flex-wrap: wrap;
       }
 
       button {
@@ -45,20 +46,18 @@
         color: goldenrod;
       }
 
+      /* //popup styling */
+
       #popup {
         width: 50vw;
         position: fixed;
         top: 15vw;
-        left: 27.5vw;
+        left: 25.5vw;
         display: none;
       }
 
       #popup article {
         background-color: wheat;
-      }
-
-      #popup article .billedep {
-        max-width: 70%;
       }
 
       #popup article .navnp {
@@ -84,7 +83,7 @@
     <section id="liste"></section>
 
     <template>
-      <article class="person">
+      <article>
         <h2 class="navn"></h2>
         <p class="beskrivelse"></p>
         <img src="" alt="" class="menu-billede" />
