@@ -7,6 +7,7 @@
     <style>
       body {
         font-family: sans-serif;
+        background-color: lavenderblush;
       }
 
       img {
@@ -25,6 +26,32 @@
         padding: 1em;
         border: 1px solid;
         border-radius: 1em;
+        background-color: white;
+      }
+
+      header {
+        background-color: cornflowerblue;
+        padding: 4rem;
+      }
+
+      header h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      h4 {
+        font-size: 2rem;
+        text-align: end;
+      }
+
+      h1 {
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
       }
 
       nav {
@@ -32,61 +59,66 @@
         justify-content: center;
         gap: 1rem;
         padding: 1rem;
-        background-color: chocolate;
         flex-wrap: wrap;
       }
 
       button {
         font-size: 1.5rem;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: cornflowerblue;
+        border-radius: 0.5em;
+        color: white;
       }
 
       .valgt {
-        opacity: 75%;
-        color: goldenrod;
+        opacity: 60%;
       }
 
-      /* //popup styling */
+      /* popup styling */
 
       #popup {
         width: 50vw;
         position: fixed;
-        top: 15vw;
+        top: 5vw;
         left: 25.5vw;
         display: none;
       }
 
       #popup article {
-        background-color: wheat;
+        background-color: white;
       }
 
       #popup article .navnp {
         display: block;
+      }
+
+      #popup article .billedep {
+        max-width: 80%;
       }
     </style>
   </head>
 
   <body>
     <header>
-      <h1>Bistro Babushka pop up</h1>
-      <nav>
-        <button data-kategori="alle" class="valgt">Alle</button>
-        <button data-kategori="forretter">Forretter</button>
-        <button data-kategori="hovedretter">Hovedretter</button>
-        <button data-kategori="desserter">Desserter</button>
-        <button data-kategori="sideorders">Sideorders</button>
-        <button data-kategori="drikkevarer">Drikkevarer</button>
-      </nav>
-      <h2>Alle</h2>
+      <h1>BISTRO BABUSHKA</h1>
     </header>
-
+    <nav>
+      <button data-kategori="alle" class="valgt">ALLE</button>
+      <button data-kategori="forretter">FORRETTER</button>
+      <button data-kategori="hovedretter">HOVEDRETTER</button>
+      <button data-kategori="desserter">DESSERTER</button>
+      <button data-kategori="sideorders">SIDEORDERS</button>
+      <button data-kategori="drikkevarer">DRIKKEVARER</button>
+    </nav>
+    <h2 style="text-transform: uppercase">Alle</h2>
     <section id="liste"></section>
 
     <template>
       <article>
-        <h2 class="navn"></h2>
+        <h2 class="navn" style="text-transform: uppercase"></h2>
         <p class="beskrivelse"></p>
         <img src="" alt="" class="menu-billede" />
+        <h4 class="pris"></h4>
       </article>
     </template>
 
@@ -103,7 +135,7 @@
     </section>
 
     <script>
-      const header = document.querySelector("header h2");
+      const header = document.querySelector("h2");
       const myHeaders = {
         "x-apikey": "600ec2fb1346a1524ff12de4",
       };
@@ -156,6 +188,7 @@
             klon.querySelector(".navn").textContent = retter.navn;
             klon.querySelector(".beskrivelse").textContent =
               retter.kortbeskrivelse;
+            klon.querySelector(".pris").textContent = retter.pris + ".-";
             klon.querySelector(".menu-billede").src =
               "images/" + retter.billednavn + "-md.jpg";
 
