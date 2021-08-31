@@ -53,7 +53,6 @@
           <nav>
             <button data-kategori="alle" class="valgt">Tilbage</button>
           </nav>
-          <h2>Ret</h2>
         </header>
     
    <section> 
@@ -61,9 +60,9 @@
            
             <img src="" alt="" class="billede" />
             <h2 class="navn"></h2>
-            <p class="beskrivelse"></p>
-            <p class="beskrivelse"></p>
-            <p class="beskrivelse"></p>
+            <p class="langb"></p>
+            <p class="oprindelse"></p>
+            <p class="pris"></p>
           </article>
         </section>
 
@@ -98,6 +97,8 @@ async function hentData() {
 
 function visRetter(){
 document.querySelector(".navn").textContent = retter.navn;
+document.querySelector(".langb").textContent = retter.langbeskrivelse;
+document.querySelector(".billede").src = "images/" + retter.billednavn + "-md.jpg";
 } 
 
 </script>
